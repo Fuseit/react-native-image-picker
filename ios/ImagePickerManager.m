@@ -456,7 +456,10 @@ RCT_EXPORT_METHOD(showImagePicker:(NSDictionary *)options callback:(RCTResponseS
 
                 if (videoURL) { // Protect against reported crash
                   NSError *error = nil;
-                  [fileManager moveItemAtURL:videoURL toURL:videoDestinationURL error:&error];
+                    // See https://github.com/react-native-community/react-native-image-picker/pull/1118
+                  // and https://github.com/react-native-community/react-native-image-picker/issues/1179
+                  // and https://github.com/react-native-community/react-native-image-picker/issues/1195
+                  [fileManager copyItemAtURL:videoURL toURL:videoDestinationURL error:&error];
                   if (error) {
                       self.callback(@[@{@"error": error.localizedFailureReason}]);
                       return;
