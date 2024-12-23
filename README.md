@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repo is not in use and has been deprecated. It will eventually be deleted.
+
 # React Native Image Picker
 
 [![npm version](https://badge.fury.io/js/react-native-image-picker.svg)](https://badge.fury.io/js/react-native-image-picker)
